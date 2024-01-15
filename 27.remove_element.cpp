@@ -3,20 +3,25 @@
 class Solution {
 public:
     int removeElement(std::vector<int>& nums, int val) {
-        int left_index = 0;
-        int right_index = 0;
-        for(int i = 0; i < nums.size()- left_index ; i++){
+        int index = nums.size();
+        for(int i = 0; i < index ; i++){
+            if(i == index){
+                if(nums[i] == val) 
+                    return nums.size() - index;
+                else
+                    return nums.size() - index - 1;
+            }
             if(nums[i] == val){               
-                for(int j = nums.size()-1-right_index; j > i; j--){
+                for(int j = index - 1; j > i; j--){
                     if(nums[j] != val){
                         nums[i] = nums[j];
-                        right_index++;
+                        index = j; 
+                        break;                       
                     }
                 }
-                left_index = i;
+                index = i;
             }
         }
-        return k;
     }
 };
 
