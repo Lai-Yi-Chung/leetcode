@@ -6,6 +6,8 @@ public:
     int strStr(string haystack, string needle) {
         int needle_size = needle.size();
         int needle_count = 0;
+        if(haystack.size() < needle.size())
+            return -1;
         for(std::string::size_type i = 0; i <= (haystack.size()-needle.size()); i++){
         //for(size_t i = 0; i <= (haystack.size()-needle.size()); i++){  
             for(std::string::size_type j = 0; j < needle.size(); j++){
