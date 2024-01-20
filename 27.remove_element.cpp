@@ -14,13 +14,11 @@ public:
 
 
         while(right_index > left_index){
-            if((right_index > left_index)&&(nums[left_index] != val))
+            while((right_index > left_index)&&(nums[left_index] != val))
                 left_index++;
-            else{
-                while((right_index > left_index)&&(nums[right_index] == val)){
-                    right_index--;
-                }
-            }
+            while((right_index > left_index)&&(nums[right_index] == val))
+                right_index--;
+            
             nums[left_index]  = nums[right_index];
             nums[right_index] = val; 
         }
