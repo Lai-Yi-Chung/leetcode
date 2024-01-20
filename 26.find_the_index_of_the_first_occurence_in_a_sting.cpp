@@ -14,6 +14,7 @@ public:
             }
             if(needle_size == needle_count)
                 return i;
+            needle_count = 0;
         }
         return -1;
     }
@@ -22,5 +23,6 @@ public:
 int main (){
     Solution solution;
     cout << solution.strStr("hello","ll") << endl;
+    cout << solution.strStr("aaa","aaaa") << endl;
     return 0;
 }
