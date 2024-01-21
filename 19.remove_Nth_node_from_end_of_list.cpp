@@ -19,7 +19,9 @@ public:
             list_size++;
             current = current->next;
         }    
-
+        if(list_size == n-1){
+            return head = head->next;
+        }
         current = head;  
         if(list_size >= n){
             for(int i = 0; i < list_size-n ; i++){
@@ -97,10 +99,7 @@ public:
         else if (list_size == 1){
             current->next = nullptr;
             return head;
-        }else if(list_size == n-1){
-            return head = head->next;
-        }
-        else{
+        }else{
             current->next = current->next->next;
             return head;
         }   
