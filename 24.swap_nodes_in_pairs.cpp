@@ -11,6 +11,7 @@
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
+        ListNode* temp = nullptr;
         ListNode* last_last_node = nullptr;
         ListNode* last_node = nullptr;
         ListNode* current = head;
@@ -22,11 +23,13 @@ public:
                 last_node = current->next;
             }else if(swap_count == 2){
                 swap_count = 0;
+                temp = current->next;
                 last_last_node->next = current->next;
                 last_node->next = current->next->next;
                 //current->next->next = last_node;
                 //current->next = current;
                 //current->next->next = current;
+                temp->next = current;
             }
             current = current->next;
         }    
